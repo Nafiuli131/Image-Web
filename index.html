@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Website with Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            text-align: center;
+            background-color: #333;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container button {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .image-container button:hover {
+            background-color: #ff4c4c;
+        }
+
+        @media (max-width: 768px) {
+            .image-container img {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-container img {
+                max-width: 100%;
+            }
+        }
+
+        #page2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div id="page1">
+        <header>
+            <img src="https://via.placeholder.com/800x200?text=Header+Image" alt="Header Image">
+        </header>
+
+        <div class="content">
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Content+Image+1" alt="Content Image 1">
+                <button onclick="navigateToPage2()">Awesome</button>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Content+Image+2" alt="Content Image 2">
+                <button onclick="navigateToPage2()">Awesome</button>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Content+Image+3" alt="Content Image 3">
+                <button onclick="navigateToPage2()">Awesome</button>
+            </div>
+        </div>
+
+        <footer>
+            <img src="https://via.placeholder.com/800x100?text=Footer+Image" alt="Footer Image">
+        </footer>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2">
+        <header>
+            <img src="https://via.placeholder.com/800x200?text=Header+Image+Page+2" alt="Header Image Page 2">
+        </header>
+
+        <div class="content">
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Content+Image+4" alt="Content Image 4">
+                <button onclick="navigateToPage1()">Back to Page 1</button>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Content+Image+5" alt="Content Image 5">
+                <button onclick="navigateToPage1()">Back to Page 1</button>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/800x400?text=Content+Image+6" alt="Content Image 6">
+                <button onclick="navigateToPage1()">Back to Page 1</button>
+            </div>
+        </div>
+
+        <footer>
+            <img src="https://via.placeholder.com/800x100?text=Footer+Image+Page+2" alt="Footer Image Page 2">
+        </footer>
+    </div>
+
+    <script>
+        function navigateToPage2() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'block';
+        }
+
+        function navigateToPage1() {
+            document.getElementById('page1').style.display = 'block';
+            document.getElementById('page2').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
